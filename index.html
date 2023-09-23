@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Example</title>
+	<meta charset="utf-8">
+	<title>
+		Controlled Brightness in a Lamp
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <form action="process_form.php" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-        <input type="submit" value="Submit">
-    </form>
+
+    <div class="lamp-wrapper">
+        <div class="lamp-rope"></div>
+        <div class="lamp">
+          <div class="lamp-part -top">
+              <div class="lamp-part -top-part"></div>
+              <div class="lamp-part -top-part right"></div>
+          </div>
+          <div class="lamp-part -body"></div>
+          <div class="lamp-part -body right"></div>
+          <div class="lamp-part -bottom"></div>
+          <div class="blub"></div>
+        </div>
+        <div class="wall-light-shadow"></div>
+      </div>
+      
+      <form oninput="body.setAttribute('data-light', slider.value)">
+        <div class="icon sun">
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+        </div>
+        <input type="range" id="slider" value="0" min="0" max="10">
+      </form>
+      
 </body>
 </html>
